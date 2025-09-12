@@ -75,9 +75,9 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 gradient-soft">
+      <section className="py-24 px-6 bg-muted/30">
         <div className="container mx-auto text-center">
-          <div className="max-w-3xl mx-auto glass-card p-12 rounded-2xl">
+          <div className="max-w-3xl mx-auto modern-card p-12 rounded-2xl">
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Ready to Start Your Learning Journey?
             </h3>
@@ -86,7 +86,7 @@ const Index = () => {
               and advancing their careers with SkillForge.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4">
                 Create Free Account
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4">

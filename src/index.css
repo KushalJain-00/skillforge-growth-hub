@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* SkillForge Design System - Minimalistic, Light-toned Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - soft whites and pale grays */
+    --background: 0 0% 99%;
+    --foreground: 0 0% 18%;
 
+    /* Card components - clean white with subtle shadows */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 18%;
 
+    /* Popover components */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Sky Blue (#A7D8F5) */
+    --primary: 198 79% 81%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 198 79% 91%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Lavender (#C7B9FF) */
+    --secondary: 255 100% 87%;
+    --secondary-foreground: 0 0% 18%;
+    --secondary-soft: 255 100% 94%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Mint Green (#B2F0E4) */
+    --accent: 162 71% 82%;
+    --accent-foreground: 0 0% 18%;
+    --accent-soft: 162 71% 92%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Text - Charcoal Gray */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* System colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 92%;
+    --input: 0 0% 97%;
+    --ring: 198 79% 81%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* SkillForge specific tokens */
+    --glass-bg: 0 0% 100% / 0.3;
+    --glass-border: 0 0% 100% / 0.4;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(198 79% 81%), hsl(255 100% 87%));
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-accent: linear-gradient(90deg, hsl(162 71% 82%), hsl(198 79% 81%));
+    
+    /* Animations */
+    --animation-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.05), 0 2px 4px -1px hsl(0 0% 0% / 0.03);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.08);
+    --shadow-elevated: 0 10px 25px -3px hsl(0 0% 0% / 0.1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +129,37 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+  }
+
+  /* Glass morphism utilities */
+  .glass {
+    @apply backdrop-blur-glass bg-white/30 border border-white/40;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-glass bg-white/60 border border-white/50 shadow-glass;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--animation-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--animation-bounce);
+  }
+
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
   }
 }

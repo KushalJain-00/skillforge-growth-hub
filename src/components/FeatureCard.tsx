@@ -5,9 +5,10 @@ interface FeatureCardProps {
   title: string;
   description: string;
   gradient?: "primary" | "secondary" | "accent";
+  onClick?: () => void;
 }
 
-const FeatureCard = ({ icon: Icon, title, description, gradient = "primary" }: FeatureCardProps) => {
+const FeatureCard = ({ icon: Icon, title, description, gradient = "primary", onClick }: FeatureCardProps) => {
   const gradientClasses = {
     primary: "from-primary/20 to-primary-soft/30",
     secondary: "from-secondary/20 to-secondary-soft/30",
@@ -15,7 +16,10 @@ const FeatureCard = ({ icon: Icon, title, description, gradient = "primary" }: F
   };
 
   return (
-    <div className="group relative p-6 rounded-xl glass-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+    <div 
+      className={`group relative p-6 rounded-xl glass-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick}
+    >
       <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${gradientClasses[gradient]} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
       
       <div className="relative z-10">

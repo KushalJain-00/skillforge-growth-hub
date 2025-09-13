@@ -65,11 +65,25 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <FeatureCard {...feature} />
-              </div>
-            ))}
+            {features.map((feature, index) => {
+              const getClickHandler = () => {
+                switch (feature.title) {
+                  case "Hands-on Projects": return () => window.location.href = "/projects";
+                  case "Peer Learning": return () => window.location.href = "/community";
+                  case "Skill Recognition": return () => window.location.href = "/learn";
+                  case "Personalized Path": return () => window.location.href = "/learn";
+                  case "Goal Tracking": return () => window.location.href = "/dashboard";
+                  case "Expert Content": return () => window.location.href = "/learn";
+                  default: return undefined;
+                }
+              };
+              
+              return (
+                <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <FeatureCard {...feature} onClick={getClickHandler()} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -86,11 +100,11 @@ const Index = () => {
               and advancing their careers with SkillForge.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4">
-                Create Free Account
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 hover:scale-105 transition-all duration-200" asChild>
+                <a href="/dashboard">Track Progress</a>
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4">
-                Explore Courses
+              <Button variant="outline" size="lg" className="px-8 py-4 hover:scale-105 transition-all duration-200 hover:shadow-lg" asChild>
+                <a href="/learn">Explore Courses</a>
               </Button>
             </div>
           </div>

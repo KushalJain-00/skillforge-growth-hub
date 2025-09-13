@@ -1,7 +1,8 @@
-import { BookOpen, Users, Trophy, User, Menu, X, Home, BarChart3, Briefcase, Settings } from "lucide-react";
+import { BookOpen, Users, Trophy, Home } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import ProfileDropdown from "./ProfileDropdown";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +10,8 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", icon: Home, href: "/" },
     { name: "Learn", icon: BookOpen, href: "/learn" },
-    { name: "Dashboard", icon: BarChart3, href: "/dashboard" },
     { name: "Projects", icon: Trophy, href: "/projects" },
-    { name: "Community", icon: Users, href: "/community" },
-    { name: "Portfolio", icon: Briefcase, href: "/portfolio" },
-    { name: "Profile", icon: User, href: "/profile" },
-    { name: "Admin", icon: Settings, href: "/admin" }
+    { name: "Community", icon: Users, href: "/community" }
   ];
 
   return (
@@ -59,18 +56,20 @@ const Navigation = () => {
               <Button className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground shadow-soft border-0">
                 Get Started
               </Button>
+              <ProfileDropdown />
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex items-center space-x-3 lg:hidden">
               <ThemeToggle />
+              <ProfileDropdown />
               <Button
                 variant="ghost"
                 size="icon"
                 className="glass-button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMenuOpen ? "✕" : "☰"}
               </Button>
             </div>
           </div>

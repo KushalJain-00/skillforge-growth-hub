@@ -1,23 +1,15 @@
+import HyperspeedBackground from "./HyperspeedBackground";
 import { ArrowRight, Play, Star, Users, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      />
+      {/* Hyperspeed Background */}
+      <HyperspeedBackground />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-10 gradient-hero opacity-90" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/20 via-secondary/15 to-transparent" />
       
       {/* Floating Elements */}
       <div className="absolute inset-0 z-20">
@@ -60,9 +52,12 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="glass hover:bg-white/20 border-white/30 text-white font-semibold px-8 py-4 transition-bounce group"
+            asChild
           >
-            Start Learning Free
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <a href="/learn">
+              Start Learning Free
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
           </Button>
           
           <Button 

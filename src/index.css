@@ -234,6 +234,7 @@ All colors MUST be HSL.
       transform: translateY(10px) translateX(-5px);
     }
   }
+}
 
 @layer utilities {
   /* Animation utilities */

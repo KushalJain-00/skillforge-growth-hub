@@ -79,6 +79,9 @@ export default {
       backdropBlur: {
         'glass': '16px',
       },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

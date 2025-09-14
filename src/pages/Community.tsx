@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { MessageSquare, Users, TrendingUp, Clock, Heart, Reply, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -223,6 +224,8 @@ const Community = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

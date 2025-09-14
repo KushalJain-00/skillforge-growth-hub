@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Github, ExternalLink, Heart, MessageCircle, Star, Plus, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -184,6 +185,8 @@ const Projects = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

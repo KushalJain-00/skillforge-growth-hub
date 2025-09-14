@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import ConfettiAnimation from "@/components/ConfettiAnimation";
 import { useState } from "react";
@@ -106,6 +107,8 @@ const Dashboard = () => {
           </Card>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

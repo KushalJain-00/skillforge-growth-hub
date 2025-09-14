@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { BookOpen, Clock, Star, Users, ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -149,6 +150,8 @@ const Learn = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeatureCard from "@/components/FeatureCard";
+import ReachImpactSection from "@/components/ReachImpactSection";
+import Footer from "@/components/Footer";
 import { Code, Users, Trophy, Zap, Target, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -88,6 +90,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reach & Impact Section */}
+      <ReachImpactSection />
+      
       {/* CTA Section */}
       <section className="py-24 px-6 bg-muted/30">
         <div className="container mx-auto text-center">
@@ -110,6 +115,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
